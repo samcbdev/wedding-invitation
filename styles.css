@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -29,21 +29,16 @@ body {
 
 .main-header {
     margin-bottom: 40px;
-    overflow: hidden; /* Prevent overflow for responsive adjustments */
 }
 
 .grand-title {
-    font-size: 3rem; /* Larger size for desktop */
+    font-size: 2.5rem;
     font-weight: bold;
-    text-shadow: 0 0 15px #00ff00; /* Glowing green shadow */
-    line-height: 1.2; /* Adjust line height for better spacing */
-    white-space: normal; /* Allow text to wrap */
-    text-align: center; /* Center align text */
+    text-shadow: 0 0 15px #fff;
 }
 
 .grand-title span {
     color: #ffdf00;
-    font-weight: normal;
 }
 
 .commit-box {
@@ -57,18 +52,15 @@ body {
 .commit-box p {
     font-size: 1.2rem;
     color: #00ff00;
-    text-shadow: 0 0 8px #00ff00;
 }
 
 .merge-message {
     margin-top: 30px;
     font-size: 1.5rem;
-    color: #ffdf00;
 }
 
 .details-section {
     margin-top: 50px;
-    font-size: 1.2rem;
 }
 
 .details-section p {
@@ -86,139 +78,63 @@ body {
 .countdown-title {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #ffdf00;
 }
 
 #countdown {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 20px; /* Space between countdown items */
 }
 
+/* Countdown item styling */
 .countdown-item {
     background: rgba(255, 255, 255, 0.1);
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    color: #fff;
-    flex-basis: 80px; /* Ensure better scaling on mobile */
+    padding: 10px 15px; /* Padding for countdown items */
+    border-radius: 5px; /* Rounded corners */
 }
 
-.merge-progress {
-    margin-top: 40px;
-}
-
+/* Progress bar styling */
 .progress-bar {
     width: 100%;
-    height: 25px;
-    background: #333;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #ffdf00, #00ff00);
-    width: 0;
-}
-
-.progress-message {
-    font-size: 1.2rem;
-    color: #ffdf00;
-}
-
-footer {
-    margin-top: 40px;
-}
-
-.closing-message {
-    font-size: 1.5rem;
-    color: #00ff00;
-}
-
-/* Typing animation */
-.typing-animation {
-    display: inline-block;
-    border-right: 2px solid #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .grand-title {
-        font-size: 2.5rem;
-    }
+    
+   .grand-title {
+        font-size: 2rem; /* Reduced title size on medium screens */
+   }
 
-    .grand-subtitle {
-        font-size: 1.6rem;
-    }
+   .grand-subtitle,
+   .details-section,
+   .commit-box p,
+   .countdown-item,
+   footer .closing-message {
+        font-size: calc(1rem + (1.5 - (100vw / 768)) * (1.5 - 1)); /* Responsive scaling */
+   }
 
-    .details-section {
-        font-size: 1.1rem;
-    }
-
-    .commit-box p {
-        font-size: 1rem;
-    }
-
-    .countdown-item {
-        font-size: 1rem;
-        padding: 8px 12px;
-    }
-
-    footer .closing-message {
-        font-size: 1.3rem;
-    }
+   #countdown {
+        flex-direction: column; /* Stack countdown items vertically on smaller screens */
+        gap:10px; /* Reduce gap between items when stacked */
+   }
 }
 
-/* Mobile Screen */
 @media (max-width: 480px) {
-    .grand-title {
-        font-size: 2rem; /* Smaller for mobile */
-        line-height: 1.2; /* Adjust line height */
-    }
-  
-    .grand-title span {
-        display: block;
-        font-size: 1.5rem; /* Smaller for the 'weds' text */
-    }
 
-    .commit-box p {
-        font-size: 0.9rem;
-    }
+   .grand-title {
+        font-size: calc(1.5rem + (2 - (100vw /480)) * (2 -1)); /* Further reduce title size on small screens */ 
+   }
 
-    .merge-message {
-        font-size: 1.2rem;
-    }
+   .commit-box p,
+   .merge-message,
+   .details-section,
+   .countdown-item,
+   footer .closing-message {
+        font-size : calc(0.9rem + (1 - (100vw /480)) * (1 -0.9)); /* Responsive scaling for smaller devices */
+   }
 
-    .details-section {
-        font-size: 1rem;
-    }
-
-    .countdown-item {
-        flex-basis: 60px;
-        padding: 6px 10px;
-        font-size: 0.9rem;
-    }
-
-    .merge-progress .progress-bar {
-        height: 20px;
-    }
-
-    footer .closing-message {
-        font-size: 1.1rem;
-    }
+   .countdown-item {
+        flex-basis : auto; /* Allow countdown items to take full width on small screens */
+        padding :6px; /* Adjust padding for small screens */
+   }
 }
