@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(".progress-fill").animate({
         width: "100%"
     }, 4000, function() {
-        $(".progress-message").text('Merge completed successfully!');
+        $(".progress-message").text('Merging "Samuel Raja" + "Latha Priyadharshini"...');
     });
 
     // Countdown Timer
@@ -26,6 +26,7 @@ $(document).ready(function() {
         if (timeLeft < 0) {
             clearInterval(countdown);
             $('#countdown').text("It's time for the wedding!");
+            $(".progress-message").text('Merge completed successfully!');
         }
     }, 1000);
 });
