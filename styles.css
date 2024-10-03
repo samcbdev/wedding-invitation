@@ -103,7 +103,13 @@ body {
     
    .grand-title {
         font-size: 2rem; /* Reduced title size on medium screens */
+        line-height: 1.2;
    }
+  
+  .grand-title span {
+        display: block; /* Make 'weds' a block element to force a line break */
+        margin: 0.5rem 0; /* Add some margin for spacing */
+  }
 
    .grand-subtitle,
    .details-section,
@@ -123,6 +129,7 @@ body {
 
    .grand-title {
         font-size: calc(1.5rem + (2 - (100vw /480)) * (2 -1)); /* Further reduce title size on small screens */ 
+        line-height: 1.2;
    }
 
    .commit-box p,
@@ -137,4 +144,9 @@ body {
         flex-basis : auto; /* Allow countdown items to take full width on small screens */
         padding :6px; /* Adjust padding for small screens */
    }
+  
+  .grand-title span {
+        display: block; /* Make 'weds' a block element to force a line break */
+        margin: 0.5rem 0; /* Add some margin for spacing */
+  }
 }
