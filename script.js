@@ -27,6 +27,7 @@ $(document).ready(function() {
             clearInterval(countdown);
             $('#countdown').text("It's time for the wedding!");
             $(".progress-message").text('Merge completed successfully!');
+            $(".closing-message").text('Thanks for coming');
         }
     }, 1000);
 });
