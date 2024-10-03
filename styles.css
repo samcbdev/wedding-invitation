@@ -29,12 +29,16 @@ body {
 
 .main-header {
     margin-bottom: 40px;
+    overflow: hidden; /* Prevent overflow for responsive adjustments */
 }
 
 .grand-title {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Larger size for desktop */
     font-weight: bold;
-    text-shadow: 0 0 15px #fff;
+    text-shadow: 0 0 15px #00ff00; /* Glowing green shadow */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    white-space: normal; /* Allow text to wrap */
+    text-align: center; /* Center align text */
 }
 
 .grand-title span {
@@ -155,7 +159,7 @@ footer {
 /* Responsive styles */
 @media (max-width: 768px) {
     .grand-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .grand-subtitle {
@@ -183,7 +187,13 @@ footer {
 /* Mobile Screen */
 @media (max-width: 480px) {
     .grand-title {
-        font-size: 1.8rem;
+        font-size: 2rem; /* Smaller for mobile */
+        line-height: 1.2; /* Adjust line height */
+    }
+  
+    .grand-title span {
+        display: block;
+        font-size: 1.5rem; /* Smaller for the 'weds' text */
     }
 
     .commit-box p {
